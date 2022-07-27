@@ -22,6 +22,17 @@
       "metadata": {
         "description": "Please specify a password for the Azure SQL Server administrator. Default value: newGuid()."
       }
+    },
+    "resourceTags": {
+      "type": "object",
+      "defaultValue": {
+        "chargecode": "800000059309",
+        "department": "tax",
+        "environment": "qa",
+        "project": "dgdf",
+        "region": "us",
+        "technicalcontact": "rkhatri@kpmg.com"
+      }
     }
   },
   "variables": {
@@ -275,18 +286,18 @@
       "type": "Microsoft.Purview/accounts",
       "apiVersion": "2021-07-01",
       "name": "[format('pvdemo{0}-pv', variables('suffix'))]",
+      "tags": "[parameters('resourceTags')]",
       "location": "[variables('location')]",
       "identity": {
         "type": "SystemAssigned"
       },
-      "tags": {
-        "resourceByPass": "allowed"
-      }
+
     },
     {
       "type": "Microsoft.ManagedIdentity/userAssignedIdentities",
       "apiVersion": "2018-11-30",
       "name": "configDeployer",
+      "tags": "[parameters('resourceTags')]",
       "location": "[variables('location')]"
     },
     {
@@ -306,6 +317,7 @@
       "type": "Microsoft.Sql/servers",
       "apiVersion": "2021-02-01-preview",
       "name": "[format('pvdemo{0}-sqlsvr', variables('suffix'))]",
+      "tags": "[parameters('resourceTags')]",
       "location": "[variables('location')]",
       "properties": {
         "administratorLogin": "[parameters('sqlServerAdminLogin')]",
@@ -316,6 +328,7 @@
       "type": "Microsoft.Sql/servers/databases",
       "apiVersion": "2021-02-01-preview",
       "name": "[format('{0}/{1}', format('pvdemo{0}-sqlsvr', variables('suffix')), format('pvdemo{0}-sqldb', variables('suffix')))]",
+      "tags": "[parameters('resourceTags')]",
       "location": "[variables('location')]",
       "sku": {
         "name": "GP_S_Gen5",
@@ -338,6 +351,7 @@
       "type": "Microsoft.KeyVault/vaults",
       "apiVersion": "2021-04-01-preview",
       "name": "[format('pvdemo{0}-keyvault', variables('suffix'))]",
+      "tags": "[parameters('resourceTags')]",
       "location": "[variables('location')]",
       "properties": {
         "sku": {
@@ -383,6 +397,7 @@
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2021-04-01",
       "name": "[format('pvdemo{0}adls', variables('suffix'))]",
+      "tags": "[parameters('resourceTags')]",
       "location": "[variables('location')]",
       "kind": "StorageV2",
       "sku": {
@@ -406,9 +421,7 @@
       "identity": {
         "type": "SystemAssigned"
       },
-      "tags": {
-        "catalogUri": "[format('{0}.catalog.purview.azure.com', format('pvdemo{0}-pv', variables('suffix')))]"
-      },
+      "tags": "[parameters('resourceTags')]",
       "dependsOn": [
         "[resourceId('Microsoft.Purview/accounts', format('pvdemo{0}-pv', variables('suffix')))]"
       ]
@@ -417,6 +430,7 @@
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2021-04-01",
       "name": "[format('pvdemo{0}synapsedl', variables('suffix'))]",
+      "tags": "[parameters('resourceTags')]",
       "location": "[variables('location')]",
       "kind": "StorageV2",
       "sku": {
@@ -438,6 +452,7 @@
       "type": "Microsoft.Synapse/workspaces",
       "apiVersion": "2021-05-01",
       "name": "[format('pvdemo{0}-synapse', variables('suffix'))]",
+      "tags": "[parameters('resourceTags')]",
       "location": "[variables('location')]",
       "properties": {
         "defaultDataLakeStorage": {
@@ -505,6 +520,7 @@
       "type": "Microsoft.Resources/deploymentScripts",
       "apiVersion": "2020-10-01",
       "name": "script",
+      "tags": "[parameters('resourceTags')]",
       "location": "[variables('location')]",
       "kind": "AzurePowerShell",
       "properties": {
