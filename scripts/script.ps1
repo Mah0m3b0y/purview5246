@@ -126,7 +126,7 @@ function createGlossary([string]$access_token) {
 
 # [POST] Import Glossary Terms
 function importGlossaryTerms([string]$access_token, [string]$glossaryGuid, [string]$glossaryTermsTemplateUri) {
-    $glossaryTermsFilename = "import-terms-sample.csv"
+    $glossaryTermsFilename = "import-terms-sample.csv" ### need to replace this with existing exported file
     Invoke-RestMethod -Uri $glossaryTermsTemplateUri -OutFile $glossaryTermsFilename
     $glossaryImportUri = "${pv_endpoint}/catalog/api/atlas/v2/glossary/${glossaryGuid}/terms/import?includeTermHierarchy=true&api-version=2021-05-01-preview"
     $fieldName = 'file'
@@ -221,10 +221,10 @@ $credentialPayload = @{
 $cred = putCredential $access_token $credentialPayload
 
 # 5. Create Collections (Sales and Marketing)
-$collectionSales = putCollection $access_token "Sales" $accountName
-$collectionMarketing = putCollection $access_token "Marketing" $accountName
-$collectionSalesName = $collectionSales.name
-$collectionMarketingName = $collectionMarketing.name
+$collectionDatabases = putCollection $access_token "Databases" $accountName ### changed
+$collectionDataLakes = putCollection $access_token "Data Lakes" $accountName ### changed
+$collectionDatabasesName = $collectionDatabases.name ### changed
+$collectionDataLakesName = $collectionDataLakes.name ### changed
 Start-Sleep 30
 
 # 6. Create a Source (Azure SQL Database)
@@ -234,7 +234,7 @@ $sourceSqlPayload = @{
     name = "AzureSqlDatabase"
     properties = @{
         collection = @{
-            referenceName = $collectionSalesName
+            referenceName = $collectionDatabasesName ### changed
             type = 'CollectionReference'
         }
         location = $location
@@ -263,7 +263,7 @@ $scanSqlPayload = @{
         }
         collection = @{
             type = "CollectionReference"
-            referenceName = $collectionSalesName
+            referenceName = $collectionDatabasesName ### changed
         }
     }
 }
@@ -288,7 +288,7 @@ $sourceAdlsPayload = @{
     name = "AzureDataLakeStorage"
     properties = @{
         collection = @{
-            referenceName = $collectionMarketingName
+            referenceName = $collectionDataLakesName ### changed
             type = 'CollectionReference'
         }
         location = $location
@@ -311,7 +311,7 @@ $scanAdlsPayload = @{
         scanRulesetType = "System"
         collection = @{
             type = "CollectionReference"
-            referenceName = $collectionMarketingName
+            referenceName = $collectionDataLakesName ### changed
         }
     }
 }
