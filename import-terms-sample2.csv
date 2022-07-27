@@ -1,81 +1,81 @@
-Name	Nick Name	Status	Definition	Acronym	Resources	Related Terms	Synonyms	Stewards	Experts	Parent Term Name
-Consulting Project_consulting project service	consulting project service	Draft								Consulting Project
-Task	Task	Draft								
-Industry (Level 1-3)	Industry (Level 1-3)	Draft								
-Date of Incorporation	Date of Incorporation	Draft								
-Region	Region	Draft								
-Retirement	Retirement	Draft	"- Assets that are sold or taken out of service by a company
+﻿Name,Nick Name,Status,Definition,Acronym,Resources,Related Terms,Synonyms,Stewards,Experts,Parent Term Name
+Consulting Project_consulting project service,consulting project service,Draft,,,,,,,,Consulting Project
+Task,Task,Draft,,,,,,,,
+Industry (Level 1-3),Industry (Level 1-3),Draft,,,,,,,,
+Date of Incorporation,Date of Incorporation,Draft,,,,,,,,
+Region,Region,Draft,,,,,,,,
+Retirement,Retirement,Draft,"- Assets that are sold or taken out of service by a company
 - Can be a partial or full retirement
 - Either a sale or disposal
 - Validation SP - [Import].[usp_ValidateDataFromTransaction]
 - UI SP to trigger Transfer/Retirement - [FA].[usp_Assets_Transfer_Retirement]
 - Transformation SP - [Import].[usp_LoadAssetTransaction], [Import.usp_LoadDataFromAssetTransaction]
 - Calculation SP - [Import].[usp_CalcTransferRetirement]
-"							
-Ledger	Ledger	Draft								
-Termination Date	Termination Date	Draft								
-Service_Service	Service	Draft								Service
-Comments	Comments	Draft								
-Complexity	Complexity	Draft								
-Asset_Bonus	Bonus	Draft				Asset_Method;Asset_Asset Life;Asset_Rate;Asset_Convention;				Asset
-Country of Incorporation	Country of Incorporation	Draft								
-State_State/Province/Locale	State/Province/Locale	Draft				State / Province;State of Incorporation;	State / Province;State of Incorporation;			State
-Consulting Project	Consulting Project	Draft								
-Asset_ Delete Asset	 Delete Asset	Draft	"- An Asset in open period can be wiped out from the system.
+",,,,,,,
+Ledger,Ledger,Draft,,,,,,,,
+Termination Date,Termination Date,Draft,,,,,,,,
+Service_Service,Service,Draft,,,,,,,,Service
+Comments,Comments,Draft,,,,,,,,
+Complexity,Complexity,Draft,,,,,,,,
+Asset_Bonus,Bonus,Draft,,,,Asset_Method;Asset_Asset Life;Asset_Rate;Asset_Convention;,,,,Asset
+Country of Incorporation,Country of Incorporation,Draft,,,,,,,,
+State_State/Province/Locale,State/Province/Locale,Draft,,,,State / Province;State of Incorporation;,State / Province;State of Incorporation;,,,State
+Consulting Project,Consulting Project,Draft,,,,,,,,
+Asset_ Delete Asset, Delete Asset,Draft,"- An Asset in open period can be wiped out from the system.
 - PlacedInServiceDate or trnsaction date should be in open period.
 - Validation SP - [Import].[usp_ValidateDataFromDeleteAssets], [Import].[usp_ValidateDataFromDeleteAssets_ClosedPeriod]
 - Transformation SP - [Import].[usp_LoadAssetTransaction]
-"							Asset
-City	City	Draft								
- Book	 Book	Draft								
-Reinstatement	Reinstatement	Draft	"- Retired assets can be unretired by processing the reinstatement request.
+",,,,,,,Asset
+City,City,Draft,,,,,,,,
+ Book, Book,Draft,,,,,,,,
+Reinstatement,Reinstatement,Draft,"- Retired assets can be unretired by processing the reinstatement request.
 - Asset will be back in a transaction state prior to retirement.
 - Multiple transactions(only retirement or Adjustment) can be reinstate based on the retirement date provided in template.
 - If retirement date in template is null then only latest retirement will be instate and if retirement date in provided all the future transaction as on the retirement date will be reinstated.
 - Validation SP - [Import].[usp_ValidateDataFromTransaction]
 - Transformation SP - [Import.usp_LoadDataFromAssetTransaction]
 - Calculation SP - [Import].[usp_Reinstatement]
-"							
-Addition	Addition	Draft	"- New assets that are added to a company during the year
+",,,,,,,
+Addition,Addition,Draft,"- New assets that are added to a company during the year
 - Asset creation (Addition from UI)
 - Transformation SP - [Import].[usp_UpdateFromAssetTransaction]
 - Calculation SP - [Import].[usp_ImplementationAdditionAdjustment]
-"							
-State of Incorporation	State of Incorporation	Draft				State / Province;State_State/Province/Locale;State;	State / Province;State_State/Province/Locale;State;			
-Period End	Period End	Draft								
-Placed in service (PIS) date	Placed in service (PIS) date	Draft								
-Real Estate Type	Real Estate Type	Draft								
-State / Province	State / Province	Draft				State_State/Province/Locale;State;State of Incorporation;	State_State/Province/Locale;State;State of Incorporation;			
-State	State	Draft				State / Province;State of Incorporation;	State / Province;State of Incorporation;			
- Financial calendar_Short year	Short year	Draft	"- A reporting period that is less than 12 months and is used for closing and reporting purposes
-"							 Financial calendar
-DUNS Number	DUNS Number	Draft								
-Entity	Entity	Draft								
-Asset_Rate	Rate	Draft	"- The percentage used in the depreciation formula (100, 150 or 200%)
-"			Asset_Asset class;Asset_Method;Asset_Asset Life;Asset;Asset_Bonus;Asset_Fixed asset;Asset_Convention;				Asset
-Project Type	Project Type	Draft								
-Jurisdiction_Jurisdiction EIN	Jurisdiction EIN	Draft								Jurisdiction
-Consulting Project_consulting project service sub type	consulting project service sub type	Draft								Consulting Project
-Entity_Entity Source	Entity Source	Draft								Entity
-Percent Owned	Percent Owned	Draft								
-Documents 	Documents 	Draft								
- Custom field	 Custom field	Draft								
-Legal Entity Code	Legal Entity Code	Draft								
-Entity_Entity Type	Entity Type	Draft								Entity
-Market	Market	Draft								
-Postal Code	Postal Code	Draft								
- Reporting group	 Reporting group	Draft								
-Filing_Filing End Date	Filing End Date	Draft								Filing
-Domicile	Domicile	Draft								
-Asset_Convention	Convention	Draft				Asset_Method;Asset_Asset Life;Asset_Bonus;Asset_Rate;				Asset
-Workflow	Workflow	Draft								
-Asset_Initial acquisition cost	Initial acquisition cost	Draft								Asset
-Reporting Currency	Reporting Currency	Draft				Local Currency;Functional Currency;				
-Filing_Filing Frequency	Filing Frequency	Draft								Filing
-Effective Date	Effective Date	Draft								
- Financial calendar	 Financial calendar	Draft							a-jpankajatchan@kpmgservicesqa.tech;	
-Ledger_Ledger Type	Ledger Type	Draft								Ledger
- Depreciation	 Depreciation	Draft	"- A reduction in the value of an asset with the passage of time, due in particular to wear and tear
+",,,,,,,
+State of Incorporation,State of Incorporation,Draft,,,,State / Province;State_State/Province/Locale;State;,State / Province;State_State/Province/Locale;State;,,,
+Period End,Period End,Draft,,,,,,,,
+Placed in service (PIS) date,Placed in service (PIS) date,Draft,,,,,,,,
+Real Estate Type,Real Estate Type,Draft,,,,,,,,
+State / Province,State / Province,Draft,,,,State_State/Province/Locale;State;State of Incorporation;,State_State/Province/Locale;State;State of Incorporation;,,,
+State,State,Draft,,,,State / Province;State of Incorporation;,State / Province;State of Incorporation;,,,
+ Financial calendar_Short year,Short year,Draft,"- A reporting period that is less than 12 months and is used for closing and reporting purposes
+",,,,,,, Financial calendar
+DUNS Number,DUNS Number,Draft,,,,,,,,
+Entity,Entity,Draft,,,,,,,,
+Asset_Rate,Rate,Draft,"- The percentage used in the depreciation formula (100, 150 or 200%)
+",,,Asset_Asset class;Asset_Method;Asset_Asset Life;Asset;Asset_Bonus;Asset_Fixed asset;Asset_Convention;,,,,Asset
+Project Type,Project Type,Draft,,,,,,,,
+Jurisdiction_Jurisdiction EIN,Jurisdiction EIN,Draft,,,,,,,,Jurisdiction
+Consulting Project_consulting project service sub type,consulting project service sub type,Draft,,,,,,,,Consulting Project
+Entity_Entity Source,Entity Source,Draft,,,,,,,,Entity
+Percent Owned,Percent Owned,Draft,,,,,,,,
+Documents ,Documents ,Draft,,,,,,,,
+ Custom field, Custom field,Draft,,,,,,,,
+Legal Entity Code,Legal Entity Code,Draft,,,,,,,,
+Entity_Entity Type,Entity Type,Draft,,,,,,,,Entity
+Market,Market,Draft,,,,,,,,
+Postal Code,Postal Code,Draft,,,,,,,,
+ Reporting group, Reporting group,Draft,,,,,,,,
+Filing_Filing End Date,Filing End Date,Draft,,,,,,,,Filing
+Domicile,Domicile,Draft,,,,,,,,
+Asset_Convention,Convention,Draft,,,,Asset_Method;Asset_Asset Life;Asset_Bonus;Asset_Rate;,,,,Asset
+Workflow,Workflow,Draft,,,,,,,,
+Asset_Initial acquisition cost,Initial acquisition cost,Draft,,,,,,,,Asset
+Reporting Currency,Reporting Currency,Draft,,,,Local Currency;Functional Currency;,,,,
+Filing_Filing Frequency,Filing Frequency,Draft,,,,,,,,Filing
+Effective Date,Effective Date,Draft,,,,,,,,
+ Financial calendar, Financial calendar,Draft,,,,,,,a-jpankajatchan@kpmgservicesqa.tech;,
+Ledger_Ledger Type,Ledger Type,Draft,,,,,,,,Ledger
+ Depreciation, Depreciation,Draft,"- A reduction in the value of an asset with the passage of time, due in particular to wear and tear
 Short Year
 - Any Financial Calendar which less than 11 months is a short year.
 - Short year calculation is only applicable for HY or MQ conventions, FM and MM conventions are not impacted as these are calculated on monthly level.
@@ -84,21 +84,21 @@ Short Year
 - Calculation stored procedure for short year.
 -  [Import].[CalcShortYear]
 - Please refer the below file for short year calculation examples for HY and MQ conventions.
-"							
- Transaction	 Transaction	Draft								
-Catch down	Catch down	Draft	"In the case of retirement or transfer, the effective date of retirement or transfer in combination with the convention (such as HY, MM) determines the amount to catch up or catch down
-"			Catch up;				
-Asset_Baseline adjustment	Baseline adjustment	Draft	"- A baseline adjustment can be created using implementation file upload or AD adjustment file upload
+",,,,,,,
+ Transaction, Transaction,Draft,,,,,,,,
+Catch down,Catch down,Draft,"In the case of retirement or transfer, the effective date of retirement or transfer in combination with the convention (such as HY, MM) determines the amount to catch up or catch down
+",,,Catch up;,,,,
+Asset_Baseline adjustment,Baseline adjustment,Draft,"- A baseline adjustment can be created using implementation file upload or AD adjustment file upload
 Let's say our system calculates the depreciation up to a specific point (eg: 12/31/2021) as $5000. But the implementation file reports that the depreciation up to 12/31/2021 is $6000.
 In this scenario, we add a baseline adjustment of the difference amount which is $1000 on 12/31/2021.
 And then we revert this baseline adjustment in the next month. This means that we post -$1000 on 1/31/2021.
 Baseline adjustment can also be a negative amount. The reversal would be a positive amount in that case
 - Validation SP - [Import].[usp_ValidateDataFromTransaction]
 - Transformation SP - [Import.usp_LoadDataFromAssetTransaction]
-- SP - [Import].[usp_AdjustAccumulatedDepreciation]"							Asset
-Jurisdiction_Jurisdiction	Jurisdiction	Draft								Jurisdiction
-Local Currency	Local Currency	Draft				Reporting Currency;				
-Transfer	Transfer	Draft	"- Transfer Assets that are moved from one company to another
+- SP - [Import].[usp_AdjustAccumulatedDepreciation]",,,,,,,Asset
+Jurisdiction_Jurisdiction,Jurisdiction,Draft,,,,,,,,Jurisdiction
+Local Currency,Local Currency,Draft,,,,Reporting Currency;,,,,
+Transfer,Transfer,Draft,"- Transfer Assets that are moved from one company to another
 - Transfers can be within a consolidated group or outside a consolidated group
 - Can be a partial or full transfer
 - Validation SP - [Import].[usp_ValidateDataFromTransaction]
@@ -106,60 +106,60 @@ Transfer	Transfer	Draft	"- Transfer Assets that are moved from one company to an
 - Transformation SP - [Import].[usp_LoadAssetTransaction],[Import].[usp_UpdateAssetTransaction], [Import.usp_LoadDataFromAssetTransaction]
 - Calculation SP - [Import].[usp_CalcTransferRetirement]
 - UI SP to trigger Transfer/Retirement - [FA].[usp_Assets_Transfer_Retirement]
-"							
-Subject Area	Subject Area	Draft								
-Contacts	Contacts	Draft								
-Workflow_Workflow Name	Workflow Name	Draft								Workflow
-Catch up	Catch up	Draft	"In the case of retirement or transfer, the effective date of retirement or transfer in combination with the convention (such as HY, MM) determines the amount to catch up or catch down
-"			Catch down;				
-Document Type	Document Type	Draft								
-Entity_Entity Groups	Entity Groups	Draft								Entity
-Entity_Additional Entity Codes	Additional Entity Codes	Draft								Entity
-Ledger_Ledger	Ledger	Draft								Ledger
-Adjustment	Adjustment	Draft	"- Changes in cost to an asset during the year
+",,,,,,,
+Subject Area,Subject Area,Draft,,,,,,,,
+Contacts,Contacts,Draft,,,,,,,,
+Workflow_Workflow Name,Workflow Name,Draft,,,,,,,,Workflow
+Catch up,Catch up,Draft,"In the case of retirement or transfer, the effective date of retirement or transfer in combination with the convention (such as HY, MM) determines the amount to catch up or catch down
+",,,Catch down;,,,,
+Document Type,Document Type,Draft,,,,,,,,
+Entity_Entity Groups,Entity Groups,Draft,,,,,,,,Entity
+Entity_Additional Entity Codes,Additional Entity Codes,Draft,,,,,,,,Entity
+Ledger_Ledger,Ledger,Draft,,,,,,,,Ledger
+Adjustment,Adjustment,Draft,"- Changes in cost to an asset during the year
 - This could also reflect a change in life, method, rate, and convention
 - These changes drive a change in calculated depreciation
 - Update (Adjustment from UI)
 - Transformation SP - [Import].[usp_UpdateFromAssetTransaction]
 - Calculation SP - [Import].[usp_ImplementationAdditionAdjustment]
-"							
-Entity_Entity Name	Entity Name	Draft								Entity
-Sign off	Sign off	Draft								
-Vehicle limitation	Vehicle limitation	Draft								
-Functional Currency	Functional Currency	Draft				Reporting Currency;				
-Service	Service	Draft								
-Organization	Organization	Draft								
-Internal Debt	Internal Debt	Draft								
-Street Address	Street Address	Draft								
-Adjusted cost	Adjusted cost	Draft								
-Asset	Asset	Draft				Asset_Asset class;Asset_Method;Asset_Asset Life;Asset_Fixed asset;Asset_Rate;				
-Is Fund	Is Fund	Draft								
-Asset_Fixed asset	Fixed asset	Draft	"- A long-term asset, like a machine, a computer or a piece of furniture, that is depreciated over time
+",,,,,,,
+Entity_Entity Name,Entity Name,Draft,,,,,,,,Entity
+Sign off,Sign off,Draft,,,,,,,,
+Vehicle limitation,Vehicle limitation,Draft,,,,,,,,
+Functional Currency,Functional Currency,Draft,,,,Reporting Currency;,,,,
+Service,Service,Draft,,,,,,,,
+Organization,Organization,Draft,,,,,,,,
+Internal Debt,Internal Debt,Draft,,,,,,,,
+Street Address,Street Address,Draft,,,,,,,,
+Adjusted cost,Adjusted cost,Draft,,,,,,,,
+Asset,Asset,Draft,,,,Asset_Asset class;Asset_Method;Asset_Asset Life;Asset_Fixed asset;Asset_Rate;,,,,
+Is Fund,Is Fund,Draft,,,,,,,,
+Asset_Fixed asset,Fixed asset,Draft,"- A long-term asset, like a machine, a computer or a piece of furniture, that is depreciated over time
 - Property, plant and equipment (PP&E)
-"			Asset_Asset class;Asset_Method;Asset_Asset Life;Asset;Asset_Rate;		null;	a-jpankajatchan@kpmgservicesqa.tech: ;	Asset
-Filing_Filing Jurisdiction	Filing Jurisdiction	Draft								Filing
-Line of Business	Line of Business	Draft								
-Workflow_Workflow ID	Workflow ID	Draft								Workflow
-Service_Service Line	Service Line	Draft								Service
-Entity_Entity Number	Entity Number	Draft								Entity
-Asset_Initial acquisition date	Initial acquisition date	Draft								Asset
- Implementation	 Implementation	Draft								
-Entity_Entity Classification	Entity Classification	Draft								Entity
-Task_Task ID	Task ID	Draft								Task
-Asset_Method	Method	Draft				Asset_Asset class;Asset_Asset Life;Asset_Bonus;Asset;Asset_Fixed asset;Asset_Rate;Asset_Convention;				Asset
-Asset_Asset class	Asset class	Draft				Asset_Method;Asset_Asset Life;Asset;Asset_Fixed asset;Asset_Rate;		null;	a-jpankajatchan@kpmgservicesqa.tech;	Asset
-Filing_Filing Year	Filing Year	Draft								Filing
-Filing	Filing	Draft								
-Appointments 	Appointments 	Draft								
-County	County	Draft								
- Book_Custom book	Custom book	Draft	"- Books that most companies will not include (i.e. Cali book, 471B book and 471C book)
+",,,Asset_Asset class;Asset_Method;Asset_Asset Life;Asset;Asset_Rate;,,null;,a-jpankajatchan@kpmgservicesqa.tech: ;,Asset
+Filing_Filing Jurisdiction,Filing Jurisdiction,Draft,,,,,,,,Filing
+Line of Business,Line of Business,Draft,,,,,,,,
+Workflow_Workflow ID,Workflow ID,Draft,,,,,,,,Workflow
+Service_Service Line,Service Line,Draft,,,,,,,,Service
+Entity_Entity Number,Entity Number,Draft,,,,,,,,Entity
+Asset_Initial acquisition date,Initial acquisition date,Draft,,,,,,,,Asset
+ Implementation, Implementation,Draft,,,,,,,,
+Entity_Entity Classification,Entity Classification,Draft,,,,,,,,Entity
+Task_Task ID,Task ID,Draft,,,,,,,,Task
+Asset_Method,Method,Draft,,,,Asset_Asset class;Asset_Asset Life;Asset_Bonus;Asset;Asset_Fixed asset;Asset_Rate;Asset_Convention;,,,,Asset
+Asset_Asset class,Asset class,Draft,,,,Asset_Method;Asset_Asset Life;Asset;Asset_Fixed asset;Asset_Rate;,,null;,a-jpankajatchan@kpmgservicesqa.tech;,Asset
+Filing_Filing Year,Filing Year,Draft,,,,,,,,Filing
+Filing,Filing,Draft,,,,,,,,
+Appointments ,Appointments ,Draft,,,,,,,,
+County,County,Draft,,,,,,,,
+ Book_Custom book,Custom book,Draft,"- Books that most companies will not include (i.e. Cali book, 471B book and 471C book)
 - Financial calendar A calendar that reelects a companies closing periods and fiscal years
 - Also will indicate if a company has any short periods
-"							 Book
-Descriptor 	Descriptor 	Draft								
-Service_Service Sub-Type	Service Sub-Type	Draft								Service
-Asset_Asset Life	Asset Life	Draft		life		Asset_Asset class;Asset_Method;Asset;Asset_Bonus;Asset_Fixed asset;Asset_Rate;Asset_Convention;				Asset
-Jurisdiction	Jurisdiction	Draft								
-Task_Task Name	Task Name	Draft								Task
-Period Start	Period Start	Draft								
-Filing_ Filing group	 Filing group	Draft								Filing
+",,,,,,, Book
+Descriptor ,Descriptor ,Draft,,,,,,,,
+Service_Service Sub-Type,Service Sub-Type,Draft,,,,,,,,Service
+Asset_Asset Life,Asset Life,Draft,,life,,Asset_Asset class;Asset_Method;Asset;Asset_Bonus;Asset_Fixed asset;Asset_Rate;Asset_Convention;,,,,Asset
+Jurisdiction,Jurisdiction,Draft,,,,,,,,
+Task_Task Name,Task Name,Draft,,,,,,,,Task
+Period Start,Period Start,Draft,,,,,,,,
+Filing_ Filing group, Filing group,Draft,,,,,,,,Filing
