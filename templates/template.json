@@ -411,6 +411,7 @@
       "type": "Microsoft.DataFactory/factories",
       "apiVersion": "2018-06-01",
       "name": "[format('pvdemo{0}-adf', variables('suffix'))]",
+      "tags": "[parameters('resourceTags')]",
       "location": "[variables('location')]",
       "properties": {
         "publicNetworkAccess": "Enabled",
@@ -421,7 +422,7 @@
       "identity": {
         "type": "SystemAssigned"
       },
-      "tags": "[parameters('resourceTags')]",
+      
       "dependsOn": [
         "[resourceId('Microsoft.Purview/accounts', format('pvdemo{0}-pv', variables('suffix')))]"
       ]
