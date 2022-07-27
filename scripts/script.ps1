@@ -126,7 +126,7 @@ function createGlossary([string]$access_token) {
 
 # [POST] Import Glossary Terms
 function importGlossaryTerms([string]$access_token, [string]$glossaryGuid, [string]$glossaryTermsTemplateUri) {
-    $glossaryTermsFilename = "import-terms-sample2.csv" ### need to replace this with existing exported file
+    $glossaryTermsFilename = "import-terms-sample.csv"
     Invoke-RestMethod -Uri $glossaryTermsTemplateUri -OutFile $glossaryTermsFilename
     $glossaryImportUri = "${pv_endpoint}/catalog/api/atlas/v2/glossary/${glossaryGuid}/terms/import?includeTermHierarchy=true&api-version=2021-05-01-preview"
     $fieldName = 'file'
