@@ -126,7 +126,7 @@ function createGlossary([string]$access_token) {
 
 # [POST] Import Glossary Terms
 function importGlossaryTerms([string]$access_token, [string]$glossaryGuid, [string]$glossaryTermsTemplateUri) {
-    $glossaryTermsFilename = "import-terms-sample.csv" ### need to replace this with existing exported file
+    $glossaryTermsFilename = "import-terms-sample2.csv" ### need to replace this with existing exported file
     Invoke-RestMethod -Uri $glossaryTermsTemplateUri -OutFile $glossaryTermsFilename
     $glossaryImportUri = "${pv_endpoint}/catalog/api/atlas/v2/glossary/${glossaryGuid}/terms/import?includeTermHierarchy=true&api-version=2021-05-01-preview"
     $fieldName = 'file'
@@ -325,5 +325,5 @@ Invoke-AzDataFactoryV2Pipeline -ResourceGroupName $resourceGroupName -DataFactor
 
 # 14. Populate Glossary
 $glossaryGuid = (createGlossary $access_token).guid
-$glossaryTermsTemplateUri = 'https://raw.githubusercontent.com/tayganr/purviewlab/main/assets/import-terms-sample.csv'
+$glossaryTermsTemplateUri = 'https://raw.githubusercontent.com/Mah0m3b0y/purview5246/main/import-terms-sample2.csv' #changed path to mine
 importGlossaryTerms $access_token $glossaryGuid $glossaryTermsTemplateUri
