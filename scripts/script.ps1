@@ -18,7 +18,7 @@ param(
 Install-Module Az.Purview -Force
 Import-Module Az.Purview
 
-# Variables
+# Variables test
 $pv_endpoint = "https://${accountName}.purview.azure.com"
 
 function invokeWeb([string]$uri, [string]$access_token, [string]$method, [string]$body) { 
@@ -311,7 +311,7 @@ $scanAdlsPayload = @{
         scanRulesetType = "System"
         collection = @{
             type = "CollectionReference"
-            referenceName = $collectionDataLakesName ### changed
+            referenceName = $collectionDataLakesName
         }
     }
 }
@@ -325,5 +325,5 @@ Invoke-AzDataFactoryV2Pipeline -ResourceGroupName $resourceGroupName -DataFactor
 
 # 14. Populate Glossary
 $glossaryGuid = (createGlossary $access_token).guid
-$glossaryTermsTemplateUri = 'https://raw.githubusercontent.com/Mah0m3b0y/purview5246/main/import-terms-sample2.csv' #changed path to mine
+$glossaryTermsTemplateUri = 'https://raw.githubusercontent.com/tayganr/purviewlab/main/assets/import-terms-sample.csv'
 importGlossaryTerms $access_token $glossaryGuid $glossaryTermsTemplateUri
